@@ -235,92 +235,93 @@ export default function TestGeneratorPage() {
 
 
     // PDF
-    const docDefinition: any = {
-      info: {
-      title: tituloProva || 'Prova Gerada',
-      author: pdfProfessor,
-      },
+const docDefinition: any = {
+  info: {
+    title: tituloProva || 'Prova Gerada',
+    author: pdfProfessor,
+  },
 
-      pageMargins: [30, 30, 30, 40],
+  pageMargins: [30, 30, 30, 40],
 
-      content: [
-      {
-        image: LOGO_FINAL,
-        width: 350,
-        alignment: 'center',
-        margin: [0, -20, 0, 5]
-      },
+  content: [
+    {
+      image: LOGO_FINAL,
+      width: 350,
+      alignment: 'center',
+      margin: [0, -20, 0, 5]
+    },
 
-      {
-        text: tituloProva || 'Avaliação',
-        style: 'headerTitle',
-        margin: [0, 0, 0, 10]
-      },
+    {
+      text: tituloProva || 'Avaliação',
+      style: 'headerTitle',
+      margin: [0, 0, 0, 10]
+    },
 
-      {
-        style: 'studentInfoTable',
-        table: {
+    {
+      style: 'studentInfoTable',
+      table: {
         widths: ['*', 'auto', 'auto'],
         body: [
           [
-          { text: 'Aluno:', bold: true, border: [true, true, false, true] },
-          { text: 'Matrícula:', bold: true, border: [false, true, false, true] },
-          { text: 'Data: ___/___/___', bold: true, border: [false, true, true, true] }
+            { text: 'Aluno:', bold: true, border: [true, true, false, true] },
+            { text: 'Matrícula:', bold: true, border: [false, true, false, true] },
+            { text: 'Data: ___/___/___', bold: true, border: [false, true, true, true] }
           ],
           [
-          { text: `Professor: ${pdfProfessor}`, bold: true, border: [true, true, false, true] },
-          { text: `Disciplina: ${pdfDisciplina}`, bold: true, border: [false, true, false, true] },
-          { text: `Curso: ${pdfCurso}`, bold: true, border: [false, true, true, true] },
+            { text: `Professor: ${pdfProfessor}`, bold: true, border: [true, true, false, true] },
+            { text: `Disciplina: ${pdfDisciplina}`, bold: true, border: [false, true, false, true] },
+            { text: `Curso: ${pdfCurso}`, bold: true, border: [false, true, true, true] },
           ]
         ]
-        },
-        margin: [0, 0, 0, 25]
       },
+      margin: [0, 0, 0, 25]
+    },
 
-      // GABARITO
-      {
-        text: 'Gabarito',
-        style: 'headerTitle',
-        fontSize: 12,
-        margin: [0, 0, 0, 5]
-      },
-      {
-        alignment: 'center', // Garante que a tabela fique no centro horizontal
-        table: {
+    // GABARITO
+    {
+      text: 'Gabarito',
+      style: 'headerTitle',
+      fontSize: 12,
+      alignment: 'center', // Centraliza o título "Gabarito"
+      margin: [0, 0, 0, 5]
+    },
+    {
+      alignment: 'center', // Garante que a tabela fique no centro horizontal
+      table: {
         headerRows: 1,
         widths: ['auto', 20, 20, 20, 20],
         body: [
           // Cabeçalho
           [
-          { text: 'Questão', bold: true, alignment: 'center' },
-          { text: 'A', bold: true, alignment: 'center' },
-          { text: 'B', bold: true, alignment: 'center' },
-          { text: 'C', bold: true, alignment: 'center' },
-          { text: 'D', bold: true, alignment: 'center' },
+            { text: 'Questão', bold: true, alignment: 'center' },
+            { text: 'A', bold: true, alignment: 'center' },
+            { text: 'B', bold: true, alignment: 'center' },
+            { text: 'C', bold: true, alignment: 'center' },
+            { text: 'D', bold: true, alignment: 'center' },
           ],
           // Linhas para cada questão
           ...selectedQuestions.map((_, i) => [
-          { text: (i + 1).toString(), alignment: 'center', bold: true },
-          { text: '', border: [true, true, true, true] },
-          { text: '', border: [true, true, true, true] },
-          { text: '', border: [true, true, true, true] },
-          { text: '', border: [true, true, true, true] },
+            { text: (i + 1).toString(), alignment: 'center', bold: true },
+            { text: '', border: [true, true, true, true] },
+            { text: '', border: [true, true, true, true] },
+            { text: '', border: [true, true, true, true] },
+            { text: '', border: [true, true, true, true] },
           ])
         ]
-        },
-        layout: {
+      },
+      layout: {
         hLineWidth: function (i: number, node: any) {
           return (i === 0 || i === node.table.body.length) ? 1 : 0.5;
         },
         vLineWidth: function (i: number, node: any) {
           return (i === 0 || i === node.table.widths.length) ? 1 : 0.5;
         },
-        },
-        margin: [0, 0, 0, 25],
       },
+      margin: [0, 0, 0, 25],
+    },
 
-      questionsInColumns
-      ],
+    questionsInColumns
+    ],
 
       footer: (currentPage: number, pageCount: number) => ({
       text: `Página ${currentPage} de ${pageCount}`,
