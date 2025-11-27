@@ -309,11 +309,11 @@ export default function TestGeneratorPage() {
 
   return (
     
-    <div className="flex flex-col h-[calc(100vh-7rem)] w-full max-w-[1600px] mx-auto p-4">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-full">
+    <div className="flex flex-col w-full max-w-[1600px] mx-auto p-4 min-h-[calc(100vh-7rem)] lg:h-[calc(100vh-7rem)]">
+     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-auto lg:h-full">    
         
         {/* COLUNA ESQUERDA (BANCO DE QUESTÕES) */}
-        <div className="lg:col-span-7 flex flex-col h-full bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
+     <div className="lg:col-span-7 flex flex-col h-auto lg:h-full bg-white rounded-lg shadow-lg border border-gray-200 lg:overflow-hidden">
           
           {/* Cabeçalho da Coluna Esquerda */}
           <div className="p-4 border-b border-gray-200 bg-white z-10 flex flex-col gap-3 shadow-sm">
