@@ -24,10 +24,18 @@ export default function SignInPage() {
 
       if (response.ok) {
         const user = await response.json();
+        
+        // 1. Salva no LocalStorage (para o front usar)
         localStorage.setItem('easyquiz_user', JSON.stringify(user));
         
+        // 2. SALVA NO COOKIE (Isso é o que faz o Middleware funcionar!)
+        // O cookie se chama 'auth_token', dura 1 dia (86400s) e vale para todo o site (path=/)
+        document.cookie = `auth_token=${JSON.stringify(user)}; path=/; max-age=86400; SameSite=Lax`; 
+
         await showSuccess('Login realizado com sucesso!');
-        window.location.href = '/'; 
+        
+        // Redireciona direto para o Dashboard
+        window.location.href = '/dashboard'; 
         
       } else {
         showError('Email ou senha inválidos.');
