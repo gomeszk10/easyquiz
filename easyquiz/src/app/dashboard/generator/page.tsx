@@ -1,12 +1,13 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { FileText, Search, BookCheck, Trash2, X, Loader2 } from 'lucide-react';
+import { FileText, Search, BookCheck, Trash2, X, Loader2, AlignCenter } from 'lucide-react';
 import QuestionForExame from '../../../components/QuestionForExame'; 
 import { API_URL, getLoggedUser } from '@/services/api';
 
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
+import { Margarine } from 'next/font/google';
 
 // @ts-ignore
 pdfMake.vfs = pdfFonts.pdfMake ? pdfFonts.pdfMake.vfs : pdfFonts.vfs;
@@ -290,6 +291,7 @@ const docDefinition: any = {
       table: {
         headerRows: 1,
         widths: ['auto', 20, 20, 20, 20],
+        alignment: 'center',
         body: [
           // Cabeçalho
           [
