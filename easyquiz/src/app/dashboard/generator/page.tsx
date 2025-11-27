@@ -244,7 +244,6 @@ export default function TestGeneratorPage() {
       pageMargins: [30, 30, 30, 40],
 
       content: [
-
       {
         image: LOGO_FINAL,
         width: 350,
@@ -286,7 +285,7 @@ export default function TestGeneratorPage() {
         margin: [0, 0, 0, 5]
       },
       {
-        alignment: 'center', // Centraliza a tabela
+        alignment: 'center', // Garante que a tabela fique no centro horizontal
         table: {
         headerRows: 1,
         widths: ['auto', 20, 20, 20, 20],
