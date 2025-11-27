@@ -260,6 +260,7 @@ export default function TestGeneratorPage() {
             body: [
               [
                 { text: 'Aluno:', bold: true, border: [true, true, false, true] },
+                { text: 'Matrícula:', bold: true, border: [false, true, false, true] },
                 { text: 'Data: ___/___/___', bold: true, border: [false, true, true, true] }
               ],
               [
