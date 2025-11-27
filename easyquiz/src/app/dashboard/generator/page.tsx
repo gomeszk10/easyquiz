@@ -286,6 +286,7 @@ export default function TestGeneratorPage() {
         margin: [0, 0, 0, 5]
       },
       {
+        alignment: 'center', // Centraliza a tabela
         table: {
         headerRows: 1,
         widths: ['auto', 20, 20, 20, 20],
@@ -317,8 +318,6 @@ export default function TestGeneratorPage() {
         },
         },
         margin: [0, 0, 0, 25],
-        // Se quiser centralizar a tabela na página, pode usar alignment ou columns wrapper
-        // alignment: 'center' // pdfmake tables don't align center easily without wrapper, but left is fine usually
       },
 
       questionsInColumns
