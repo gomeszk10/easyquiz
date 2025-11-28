@@ -321,7 +321,7 @@ const docDefinition: any = {
           return (i === 0 || i === node.table.widths.length) ? 1 : 0.5;
         },
       },
-      margin: [30, 30, 30, 40],
+      margin: [130, 0, 0, 5],
     },
 
     questionsInColumns
