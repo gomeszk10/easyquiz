@@ -281,13 +281,7 @@ const docDefinition: any = {
     },
 
     // GABARITO
-    {
-      text: 'Gabarito',
-      style: 'headerTitle',
-      fontSize: 12,
-      alignment: 'center', // Centraliza o título "Gabarito"
-      margin: [0, 0, 0, 5]
-    },
+    
     {
       alignment: 'center', // Garante que a tabela fique no centro horizontal
       table: {
@@ -321,7 +315,7 @@ const docDefinition: any = {
           return (i === 0 || i === node.table.widths.length) ? 1 : 0.5;
         },
       },
-      margin: [130, 0, 0, 5],
+      margin: [175, 0, 0, 5],
     },
 
     questionsInColumns
